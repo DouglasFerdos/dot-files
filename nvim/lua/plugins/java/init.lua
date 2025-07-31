@@ -13,7 +13,9 @@ return {
         setup = {
           jdtls = function()
             require("java").setup({
-              -- Your custom nvim-java configuration goes here
+              jdk = {
+                auto_install = false,
+              },
             })
           end,
         },

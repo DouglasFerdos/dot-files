@@ -13,7 +13,8 @@ window#waybar {
 }
 
 tooltip {
-    background-color: #1d2021;
+    background-color: #24273a;
+    color: #cad3f5
 }
 
 #gamemode {
@@ -25,8 +26,8 @@ tooltip {
 #tray,
 #cpu,
 #memory,
-#battery,
 #network,
+#temperature,
 #pulseaudio {
     margin: 6px 6px 6px 0px;
     padding: 2px 8px;
@@ -46,32 +47,31 @@ tooltip {
 }
 
 #workspaces button.active {
-    background-color: #24273a;
     color: #7dc4e4;
+    background-color: #363a4f;
 }
 
 #workspaces button.urgent {
     background-color: #24273a;
-    color: #db4740;
+    color: #ed8796;
 }
 
 #workspaces button:hover {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
-#custom-power,
 #cpu,
 #memory,
 #network,
-#battery,
-#gamemode,
-#pulseaudio, 
+#pulseaudio,
+#temperature,
 #clock {
-    background-color: #1e2030;
+    background-color: #24273a;
     color: #7dc4e4;
 }
 
 #cpu.critical,
+#temperature.critical,
 #memory.critical {
     color: #db4740;
 }
