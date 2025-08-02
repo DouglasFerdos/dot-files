@@ -19,9 +19,7 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "cpu_text",
-        "cpu",
-        "temperature",
+        "group/hardware",
         "memory",
         "network",
     ],
@@ -43,6 +41,14 @@
         }
     },
 
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "temperature",
+        ]
+    },
+
     "tray": {
         "spacing": 10,
         "tooltip": false
@@ -54,7 +60,7 @@
     },
 
     "cpu": {
-        "format": "cpu {usage}%",
+        "format": " {usage}% |",
         "interval": 5,
 
         "states": {
@@ -64,8 +70,9 @@
 
     "temperature": {
         "thermal-zone": 0,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", "", ""],
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "format": " {temperatureC}°C {icon}",
+        "format-icons": ["", "", "", ""],
         "interval": 5,
         "tooltip": false,
         "states": {
@@ -74,7 +81,7 @@
     },
 
     "memory": {
-        "format": "mem {percentage}%",
+        "format": " {percentage}%",
         "interval": 5,
 
         "states": {
@@ -83,20 +90,21 @@
     },
 
     "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "eth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
+        "format-ethernet": "󰈀 {bandwidthDownBits}",
+        "format-disconnected" : " 󰈂 ",
         "interval": 5,
         "tooltip": false
 
     },
+
     "pulseaudio": {
         "scroll-step": 5,
         "max-volume": 150,
-        "format": "vol {volume}%",
-        "format-bluetooth": "vol {volume}%",
+        "format": " {volume}%",
         "nospacing": 1,
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-muted": " {volume}%",
     }
 }
 

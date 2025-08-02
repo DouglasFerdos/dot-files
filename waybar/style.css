@@ -2,7 +2,7 @@
     border: none;
     border-radius: 14px;
     min-height: 0;
-    font-family: "0xProtoNerdFontMono";
+    font-family: "0xProtoNerdFontPropo";
     font-weight: 500;
     font-size: 16px;
     padding: 0;
@@ -24,10 +24,9 @@ tooltip {
 
 #clock,
 #tray,
-#cpu,
+#hardware,
 #memory,
 #network,
-#temperature,
 #pulseaudio {
     margin: 6px 6px 6px 0px;
     padding: 2px 8px;
@@ -60,11 +59,10 @@ tooltip {
     opacity: 0.3;
 }
 
-#cpu,
 #memory,
 #network,
+#hardware,
 #pulseaudio,
-#temperature,
 #clock {
     background-color: #24273a;
     color: #7dc4e4;
