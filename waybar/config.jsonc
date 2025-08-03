@@ -45,8 +45,15 @@
         "orientation": "horizontal",
         "modules": [
             "cpu",
+            "custom/separator",
             "temperature",
         ]
+    },
+
+    "custom/separator": {
+        "format": " |",
+        "interval": "once",
+        "tooltip": false
     },
 
     "tray": {
@@ -60,7 +67,7 @@
     },
 
     "cpu": {
-        "format": " {usage}% |",
+        "format": " {usage}%",
         "interval": 5,
 
         "states": {
@@ -76,8 +83,8 @@
         "interval": 5,
         "tooltip": false,
         "states": {
-          "critical": 90
-      }
+            "critical": 90
+        }
     },
 
     "memory": {
@@ -90,7 +97,7 @@
     },
 
     "network": {
-        "format-ethernet": "󰈀 {bandwidthDownBits}",
+        "format-ethernet": " {bandwidthDownBits}  {bandwidthUpBits}",
         "format-disconnected" : " 󰈂 ",
         "interval": 5,
         "tooltip": false
@@ -101,10 +108,11 @@
         "scroll-step": 5,
         "max-volume": 150,
         "format": " {volume}%",
+        "format-muted": " {volume}%",
+        "interval": "once",
         "nospacing": 1,
         "tooltip": false,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "format-muted": " {volume}%",
     }
 }
 
